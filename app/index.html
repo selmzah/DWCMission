@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWCMission - Tank Management</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "72", "72full", Arial, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+      color: #32363a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #0a6ed1;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    header .subtitle {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0a6ed1;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: #6a6d70;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #0a6ed1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .card a:hover {
+      background-color: #085caf;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #32363a;
+      margin-top: 2rem;
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 0.5rem;
+    }
+
+    .info-box {
+      background-color: #e8f3ff;
+      border-left: 4px solid #0a6ed1;
+      padding: 1rem 1.25rem;
+      border-radius: 0 4px 4px 0;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #6a6d70;
+      font-size: 0.8rem;
+      border-top: 1px solid #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>🛢️ DWCMission - Tank Management</h1>
+      <div class="subtitle">SAP CAP + SAP Datasphere Integration</div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="info-box">
+      <strong>Bienvenue dans l'application DWCMission.</strong><br />
+      Cette application CAP expose un service OData v4 pour la gestion des réservoirs.<br />
+      Les données master sont lues depuis <strong>SAP Datasphere</strong>. 
+      Les lectures manuelles sont stockées dans <strong>SAP HANA Cloud</strong>.
+    </div>
+
+    <h2 class="section-title">📡 Endpoints OData v4</h2>
+    <div class="card-grid">
+
+      <div class="card">
+        <h2>Service Metadata</h2>
+        <p>Accédez aux métadonnées complètes du service OData v4 (définition des entités et relations).</p>
+        <a href="/odata/v4/farm-tank/$metadata" target="_blank">Voir $metadata</a>
+      </div>
+
+      <div class="card">
+        <h2>Tanks (Réservoirs)</h2>
+        <p>Liste des réservoirs chargés depuis SAP Datasphere. Données en lecture seule.</p>
+        <a href="/odata/v4/farm-tank/Tanks" target="_blank">Voir les Tanks</a>
+      </div>
+
+      <div class="card">
+        <h2>TankVolumes (Lectures)</h2>
+        <p>Lectures manuelles de volume saisies par les techniciens terrain. CRUD complet.</p>
+        <a href="/odata/v4/farm-tank/TankVolumes" target="_blank">Voir les TankVolumes</a>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">🔑 Utilisateurs de test</h2>
+    <div class="card-grid">
+
+      <div class="card">
+        <h2>Technicien Terrain</h2>
+        <p>
+          <strong>Email :</strong> field.technician@tester.sap.com<br />
+          <strong>Mot de passe :</strong> initial<br />
+          <strong>Rôle :</strong> FieldTechnician
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Administrateur</h2>
+        <p>
+          <strong>Email :</strong> admin@tester.sap.com<br />
+          <strong>Mot de passe :</strong> initial<br />
+          <strong>Rôle :</strong> Admin
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    DWCMission v1.0.0 &mdash; Apache 2.0 License &mdash; 
+    <a href="https://github.com/selmzah/DWCMission" style="color:#0a6ed1;">GitHub</a>
+  </footer>
+
+</body>
+</html>

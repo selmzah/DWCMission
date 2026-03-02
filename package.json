@@ -1,0 +1,59 @@
+{
+  "name": "dwcmission",
+  "version": "1.0.0",
+  "description": "SAP CAP application for SAP Datasphere integration - Tank Volume data entry",
+  "repository": "https://github.com/selmzah/DWCMission",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/hana-client": "^2",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "passport": "^0.6"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch",
+    "build": "cds build --production",
+    "test": "echo 'No tests configured yet'"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana-cloud"
+      },
+      "auth": {
+        "kind": "xsuaa"
+      },
+      "[development]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "database": ":memory:"
+          }
+        },
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "field.technician@tester.sap.com": {
+              "password": "initial",
+              "roles": ["FieldTechnician"]
+            },
+            "admin@tester.sap.com": {
+              "password": "initial",
+              "roles": ["Admin", "FieldTechnician"]
+            }
+          }
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}

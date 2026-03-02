@@ -1,0 +1,15 @@
+{
+  "role": {
+    "name": "dwc_role",
+    "schema_privileges": [],
+    "schema_analytic_privileges": [],
+    "object_privileges": [
+      {
+        "name": "vTanks",
+        "type": "VIEW",
+        "privileges": ["SELECT"],
+        "schema": "<DATASPHERE_SPACE_SCHEMA>"
+      }
+    ]
+  }
+}

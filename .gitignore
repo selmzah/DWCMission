@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build artifacts
+gen/
+dist/
+.build/
+
+# Local development
+*.db
+*.sqlite
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MTA build output
+mta_archives/
+*.mtar
+
+# CDS build
+default-env.json

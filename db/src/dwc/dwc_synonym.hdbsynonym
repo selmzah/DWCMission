@@ -1,0 +1,8 @@
+{
+  "vTanks": {
+    "target": {
+      "object": "vTanks",
+      "schema": "<DATASPHERE_SPACE_SCHEMA>"
+    }
+  }
+}

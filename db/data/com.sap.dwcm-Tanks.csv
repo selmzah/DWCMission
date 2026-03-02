@@ -1,0 +1,9 @@
+TankID,TankName,Capacity,CurrentLevel,Location,Status
+T001,Réservoir Nord A,50000,32000,Ferme Nord - Bâtiment A,ACTIVE
+T002,Réservoir Nord B,50000,45000,Ferme Nord - Bâtiment B,ACTIVE
+T003,Réservoir Sud A,75000,60000,Ferme Sud - Zone 1,ACTIVE
+T004,Réservoir Sud B,75000,15000,Ferme Sud - Zone 2,MAINTENANCE
+T005,Réservoir Est,30000,28000,Secteur Est - Point 3,ACTIVE
+T006,Réservoir Ouest,30000,0,Secteur Ouest - Point 1,INACTIVE
+T007,Réservoir Central,100000,85000,Centre - Principal,ACTIVE
+T008,Réservoir Backup,25000,20000,Centre - Sécurité,ACTIVE
