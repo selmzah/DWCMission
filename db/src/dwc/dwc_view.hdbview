@@ -1,0 +1,9 @@
+VIEW "dwc_tanks_view" AS
+SELECT
+  "TankID",
+  "TankName",
+  "Capacity",
+  "CurrentLevel",
+  "Location",
+  "Status"
+FROM "vTanks"

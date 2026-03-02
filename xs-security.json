@@ -1,0 +1,48 @@
+{
+  "xsappname": "dwcmission",
+  "tenant-mode": "dedicated",
+  "description": "Security configuration for DWCMission - Tank data entry application",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.FieldTechnician",
+      "description": "Scope for field technicians - can read tanks and create/edit volume readings"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Scope for administrators - full access to all data"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "FieldTechnician",
+      "description": "Role for field technicians who enter tank volume readings",
+      "scope-references": [
+        "$XSAPPNAME.FieldTechnician"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Role for administrators with full access",
+      "scope-references": [
+        "$XSAPPNAME.FieldTechnician",
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "DWCMission_FieldTechnician",
+      "description": "Role collection for field technicians",
+      "role-template-references": [
+        "$XSAPPNAME.FieldTechnician"
+      ]
+    },
+    {
+      "name": "DWCMission_Admin",
+      "description": "Role collection for administrators",
+      "role-template-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ]
+}

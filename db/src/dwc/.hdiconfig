@@ -1,0 +1,19 @@
+{
+  "file_suffixes": {
+    "hdbrole": {
+      "plugin_name": "com.sap.hana.di.role"
+    },
+    "hdbsynonym": {
+      "plugin_name": "com.sap.hana.di.synonym"
+    },
+    "hdbsynonymconfig": {
+      "plugin_name": "com.sap.hana.di.synonym.config"
+    },
+    "hdbview": {
+      "plugin_name": "com.sap.hana.di.view"
+    },
+    "hdbgrants": {
+      "plugin_name": "com.sap.hana.di.privileges.grant"
+    }
+  }
+}
