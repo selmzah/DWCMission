@@ -1,14 +1,18 @@
 {
   "role": {
     "name": "dwc_role",
-    "schema_privileges": [],
-    "schema_analytic_privileges": [],
     "object_privileges": [
       {
         "name": "vTanks",
         "type": "VIEW",
         "privileges": ["SELECT"],
-        "schema": "<DATASPHERE_SPACE_SCHEMA>"
+        "schema": "POOL_XA_00002376"
+      },
+      {
+        "name": "Tank_Geo_Dimension",
+        "type": "VIEW",
+        "privileges": ["SELECT"],
+        "schema": "POOL_XA_00002376"
       }
     ]
   }

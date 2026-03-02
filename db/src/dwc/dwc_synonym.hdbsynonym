@@ -2,7 +2,13 @@
   "vTanks": {
     "target": {
       "object": "vTanks",
-      "schema": "<DATASPHERE_SPACE_SCHEMA>"
+      "schema": "POOL_XA_00002376"
+    }
+  },
+  "Tank_Geo_Dimension": {
+    "target": {
+      "object": "Tank_Geo_Dimension",
+      "schema": "POOL_XA_00002376"
     }
   }
 }
