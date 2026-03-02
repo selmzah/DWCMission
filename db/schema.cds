@@ -1,9 +1,5 @@
 namespace com.sap.dwcm;
 
-/**
- * Tanks : Données depuis Datasphere vTanks
- * Schema: POOL_XA_00002376
- */
 entity Tanks {
   key TANK_ID           : String(30);
       LATITUDE          : Decimal(38,19);
@@ -15,9 +11,6 @@ entity Tanks {
       UOM               : String(10);
 }
 
-/**
- * TankVolumes : Lectures manuelles stockées en local
- */
 entity TankVolumes {
   key ID          : UUID;
       TANK_ID     : String(30);
